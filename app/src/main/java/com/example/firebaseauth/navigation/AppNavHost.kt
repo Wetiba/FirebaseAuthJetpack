@@ -10,13 +10,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.firebaseauth.ui.theme.screen.about.AbouScreen
 import com.example.firebaseauth.ui.theme.screen.home.HomeScreen
 import com.example.firebaseauth.ui.theme.screen.login.LoginScreen
-import com.example.firebaseauth.ui.theme.screen.products.AddProductScreen
-import com.example.firebaseauth.ui.theme.screen.products.UpdateProductScreen
-import com.example.firebaseauth.ui.theme.screen.products.ViewProductScreen
+import com.example.firebaseauth.ui.theme.screen.products.AddProductsScreen
+import com.example.firebaseauth.ui.theme.screen.products.UpdateProductsScreen
+import com.example.firebaseauth.ui.theme.screen.products.ViewProductsScreen
 import com.example.firebaseauth.ui.theme.screen.register.RegisterScreen
 
 @Composable
-fun AppNavHost(modifier: Modifier=Modifier,navController:NavHostController= rememberNavController(),startDestination:String= ROUTE_LOGIN) {
+fun AppNavHost(modifier: Modifier=Modifier,navController:NavHostController= rememberNavController(),startDestination:String= ROUTE_HOME) {
 
     NavHost(navController = navController, modifier=modifier, startDestination = startDestination ){
         composable(ROUTE_LOGIN){
@@ -32,13 +32,13 @@ fun AppNavHost(modifier: Modifier=Modifier,navController:NavHostController= reme
             HomeScreen(navController)
         }
         composable(ROUTE_ADD_PRODUCT) {
-            AddProductScreen(navController)
+            AddProductsScreen(navController)
         }
         composable(ROUTE_VIEW_PRODUCT){
-            ViewProductScreen(navController)
+            ViewProductsScreen(navController)
         }
-        composable(ROUTE_UPDATE_PRODUCT){
-            UpdateProductScreen(navController)
+        composable(ROUTE_UPDATE_PRODUCT+ "/{id}"){passedData ->
+            UpdateProductsScreen(navController,passedData.arguments?.getString("id")!!)
         }
     }
 
