@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.firebaseauth.data.productviewmodel
+import com.example.firebaseauth.navigation.ROUTE_VIEW_PRODUCT
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -83,6 +84,7 @@ fun AddProductsScreen(navController: NavHostController) {
             var productRepository = productviewmodel(navController,context)
            productRepository.saveProduct(productName.text.trim(),productQuantity.text.trim(),
                 productPrice.text)
+            navController.navigate(ROUTE_VIEW_PRODUCT)
 
 
         }) {

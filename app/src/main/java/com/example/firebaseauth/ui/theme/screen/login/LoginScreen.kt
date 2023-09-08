@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.firebaseauth.data.AuthViewModel
+import com.example.firebaseauth.navigation.ROUTE_HOME
 import com.example.firebaseauth.navigation.ROUTE_REGISTER
 
 @OptIn(ExperimentalMaterial3Api::class)

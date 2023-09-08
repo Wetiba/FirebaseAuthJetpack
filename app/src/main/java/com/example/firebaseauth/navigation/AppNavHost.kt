@@ -16,7 +16,7 @@ import com.example.firebaseauth.ui.theme.screen.products.ViewProductsScreen
 import com.example.firebaseauth.ui.theme.screen.register.RegisterScreen
 
 @Composable
-fun AppNavHost(modifier: Modifier=Modifier,navController:NavHostController= rememberNavController(),startDestination:String= ROUTE_HOME) {
+fun AppNavHost(modifier: Modifier=Modifier,navController:NavHostController= rememberNavController(),startDestination:String= ROUTE_LOGIN) {
 
     NavHost(navController = navController, modifier=modifier, startDestination = startDestination ){
         composable(ROUTE_LOGIN){
